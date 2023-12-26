@@ -1,0 +1,40 @@
+<div class="contenedor">
+
+    <h1>Listado de inmuebles</h1>
+
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+
+    <div *ngIf="cargaCompletada">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TIPO</th>
+                    <th scope="col">DIRECCIÓN</th>
+                    <th class="activo" scope="col">ACTIVO</th>
+                    <th scope="col">EDITAR</th>
+                    <th scope="col">IMAGEN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dato of aDatos">
+                    <th scope="row">{{dato.id}}</th>
+                    <td>{{dato.tipo.nombre}}</td>
+                    <td>{{dato.direccionCompleta}}</td>
+                    <td [ngClass]="{
+                    'activo-rojo':dato.activo==0,
+                    'activo-verde':dato.activo==1
+                    }">●</td>
+                    <td><button type="button" class="btn-editar" [routerLink]="['/edit-inmueble',dato.id]">Editar</button></td>
+                    <td><button type="button" class="btn-anadir " [routerLink]="['/add-imagen',dato.id]">+Imagen</button></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>

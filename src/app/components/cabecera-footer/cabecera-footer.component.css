@@ -1,0 +1,163 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-top: 1px solid white;
+    padding: 1.5rem 0;
+   
+    
+}
+
+
+.contenedor-iconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-top: 1px solid white;
+    padding: 1.5rem 0;
+
+}
+
+.contenedor-iconos a {
+    font-size: 2rem;
+    color: white;
+}
+
+.contenedor-aplicaciones {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    border-top: 1px solid white;
+    padding: 1.5rem 0;
+}
+
+.contenedor-aplicaciones i {
+    font-size: 2rem;
+
+}
+
+.contenedor-aplicaciones span {
+    display: none;
+
+}
+
+.contenedor-aplicaciones a:link {
+    color: white;
+
+}
+
+.contenedor-aplicaciones a:visited {
+    color: white;
+
+}
+
+.contenedor-aplicaciones a:hover {
+    color: white;
+
+}
+
+.contenedor-aplicaciones a:active {
+    color: white;
+
+}
+
+.logo {
+    
+    height: 40px;
+}
+
+.texto-logo{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 0.5rem;
+}
+span{
+    color:var( --amarillo-corporativo);
+    font-size: 1.2rem;
+    padding-left: 0.8rem;
+    font-weight: bold;
+}
+
+
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px) {
+    .contenedor {
+
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contenedor-logo {
+        display: flex;
+        justify-content: space-around;
+        width: 25%;
+        justify-content: flex-start;
+
+    }
+
+    .contenedor-aplicaciones {
+        width: 25%;
+        border-top: none;
+
+    }
+    .contenedor-aplicaciones i{
+        font-size: 1rem;
+    }
+    .contenedor-aplicaciones a{
+      display: flex;
+      align-items: center;
+    }
+    .contenedor-iconos {
+        width: 35%;
+        border-top: none;
+    
+    }
+
+    .contenedor-iconos a {
+        font-size: 1rem;
+       
+    }
+ 
+
+
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px) {}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px) {
+
+    .contenedor-aplicaciones a:hover {
+        color: var(--amarillo-corporativo);
+    
+    }
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px) {
+    .contenedor-aplicaciones span{
+        display: inline-block;
+        font-size: 0.8rem;
+        padding-right: 0.3rem;
+    }
+
+}

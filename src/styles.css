@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+/* COLORES CORPORATIVOS */
+
+:root {
+    --azul-corporativo: #C4E7EE;
+    --amarillo-corporativo: #F7F0D4;
+    --gris-corporativo: #a6a19e;
+    --rosa-corporativo:#f0d2e4;
+    --color-rojo-activo:rgb(239, 129, 151);
+    --color-verde-activo:rgb(184, 223, 184);
+   
+
+}
+
+/* FIRST MOBILE */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+
+}
+
+body,
+html {
+    font-family:monospace;
+    height: 100%;
+    font-size: 16px;
+    background-color:#f6f2e6;
+}
+
+h1 {
+
+    font-size: 24px;
+    margin:0 0 15px 0 ;
+    border-bottom: 1px var(--gris-corporativo) solid;
+   
+    
+}
+
+h2{
+
+    font-size: 18px;
+    margin: 0;
+}
+
+h3{
+
+    font-size: 16px;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.options div.select-inactivo {
+    background-color: var(--color-rojo-activo) !important;
+    color: white !important;
+}
+
+
+/* ES PARA LOS PUNTOS DE ACTIVO EN LOS LIST */
+.activo-rojo{
+
+    font-size:1rem;
+    color: var(--color-rojo-activo);
+    text-align:center;
+}
+
+/* ES PARA LOS PUNTOS DE ACTIVO EN LOS LIST */
+.activo-verde{
+
+    font-size:1rem;
+    color: var(--color-verde-activo);
+    text-align:center;
+}
+
+/* ES PARA LOS PUNTOS DE ACTIVO EN LOS LIST */
+.activo{
+
+    text-align:center;
+}
+
+/* Es para los list. */
+.td,th{
+
+    vertical-align: middle;
+}
+/* Estilos personalizados para los botones */
+.btn-modificar,
+.btn-anadir,
+.btn-editar {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-modificar {
+    background-color:var( --azul-corporativo);
+    color: #fff;
+}
+
+.btn-anadir {
+    background-color:rgb(249, 219, 163);
+    color: #fff;
+}
+
+.btn-editar {
+    background-color:rgb(215, 189, 235);
+    color: #fff;
+}
+/* Estilos comunes para las tablas */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid var(--gris-corporativo);
+    padding: 10px;
+    text-align: center;
+}
+
+/* Línea separadora entre filas */
+.table tr {
+    border-bottom: 1px solid var(--gris-corporativo);
+}
+
+/* Estilos para los puntos de activo en los listados */
+.table .activo-rojo {
+    font-size: 1rem;
+    color: var(--color-rojo-activo);
+}
+
+.table .activo-verde {
+    font-size: 1rem;
+    color: var(--color-verde-activo);
+}
+
+
+

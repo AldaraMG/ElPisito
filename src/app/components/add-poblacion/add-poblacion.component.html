@@ -1,0 +1,29 @@
+<div class="contenedor">
+    <h1>Añadir Poblacion</h1>
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+    <form *ngIf="cargaCompletada"class="mx-auto" #form="ngForm" (ngSubmit)="add()">
+    <div class="mb-3">
+        <label for="poblacion">POBLACION*</label>
+        <input type="text" class="form-control" id="poblacion" name="poblacion" autocomplete="off" style="text-transform:uppercase"[(ngModel)]="poblacion.nombre" required>
+    </div>
+    <div class="mb-3">
+<label for="provincia" class="provincia">PROVINCIA*</label>
+<select name="provincia" id="provincia" class="form-select" required [(ngModel)]="poblacion.provincia.id">
+<option [ngClass]="{'select-inactivo':provincia.activo==0}" *ngFor="let provincia of aProvincias" value="{{provincia.id}}">{{provincia.nombre}}</option>
+</select>
+
+    </div>
+    
+    <div class="contenedor-boton">
+        <button type="submit" class="btn-anadir" [disabled]="form.invalid">Añadir</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    </form>
+    
+    </div>

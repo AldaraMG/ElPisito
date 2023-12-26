@@ -1,0 +1,89 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid white;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+   
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.h2{
+    margin-bottom: 0.2rem;
+}
+a:link{
+    color: white;
+}
+a:visited{
+    color: white;
+}
+a:hover{
+    color: white;
+}
+a:active{
+    color: white;
+}
+h2{
+    color:var( --amarillo-corporativo)
+}
+
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+
+ 
+
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+   
+
+
+}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+
+    a:link{
+        color: var(--gris-corporativo);
+    }
+    a:visited{
+        color: var(--gris-corporativo);
+    }
+    a:hover{
+        color: white;
+    }
+    a:active{
+        color: var(--gris-corporativo);
+    }
+  
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}

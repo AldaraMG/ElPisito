@@ -1,0 +1,30 @@
+<div class="contenedor">
+    <h1>Editar provincia</h1>
+
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+
+    <form *ngIf="cargaCompletada"  class="mx-auto" #form="ngForm" (ngSubmit)="edit()">
+
+        <p class="id-provincia">ID: {{provincia.id}}</p>
+        <div class="mb-3">
+            <label for="provincia">PROVINCIA*</label>
+            <input id="provincia" type="text" name="provincia" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="provincia.nombre">
+        </div>
+
+        <div class="mb-3">
+            <label class= "label-check" for="activo">ACTIVO</label>
+            <input id="activo" type="checkbox" name="activo"  class="form-check-input" autocomplete="off" [(ngModel)]="provincia.activo">
+        </div>
+
+        
+
+
+        <div class="contenedor-boton">
+            <button type="submit" class="btn-modificar" [disabled]="form.invalid">Modificar</button>
+        </div>
+
+
+    </form>
+
+
+</div>
