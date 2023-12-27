@@ -16,10 +16,22 @@ export class InmuebleService {
     private _http:HttpClient
   ) { }
 
-
+//PARA ADMINISTRADORES
   getInmuebles():Observable<Inmueble[]>{
 
     return this._http.get<Inmueble[]>(this.url + "inmuebles");
+
+  }
+//PARA PORTADA
+  getInmueblesPortada():Observable<Inmueble[]>{
+
+    return this._http.get<Inmueble[]>(this.url + "inmuebles-portada");
+
+  }
+  //PARA LA VENTA
+  getInmueblesActivos():Observable<Inmueble[]>{
+
+    return this._http.get<Inmueble[]>(this.url + "inmuebles-activos");
 
   }
 

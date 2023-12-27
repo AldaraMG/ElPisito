@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProvinciaService } from '../../services/provincia.service';
 import { Provincia } from '../../models/entity';
 import { Router } from '@angular/router';
+import { ComunicationService } from '../../services/comunication.service';
 
 @Component({
   selector: 'app-list-provincia',
@@ -19,10 +20,13 @@ export class ListProvinciaComponent implements OnInit{
 
   constructor( 
   private _provinciaService:ProvinciaService, 
-  private _router:Router 
+  private _router:Router ,
+  private _comunicationService:ComunicationService,
   ){} 
   
   ngOnInit(): void { 
+    this._comunicationService.cambioPortada(false);
+    this._comunicationService.cambioFooter(false);
   this.getDatos(); 
   } 
   

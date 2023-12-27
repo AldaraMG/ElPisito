@@ -4,6 +4,7 @@ import { Inmueble, Poblacion, Tipo } from '../../models/entity';
 import { InmuebleService } from '../../services/inmueble.service'; 
 import { PoblacionService } from '../../services/poblacion.service'; 
 import { TipoService } from '../../services/tipo.service'; 
+import { ComunicationService } from '../../services/comunication.service';
 
 @Component({ 
 selector: 'app-add-inmueble', 
@@ -73,13 +74,15 @@ fasesCargadas:number=0;
     private _poblacionService:PoblacionService,
     private _tipoService:TipoService,
     private _inmuebleService:InmuebleService,
-    private _router:Router
+    private _router:Router,
+    private _comunicationService:ComunicationService
 
   ){}
 
 
   ngOnInit(): void {
-
+    this._comunicationService.cambioPortada(false);
+    this._comunicationService.cambioFooter(false);
     this.getDatos();
     
   }

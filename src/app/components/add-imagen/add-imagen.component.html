@@ -1,14 +1,26 @@
 <div class="contenedor">
 
+
+
     <h1>Añadir imagen</h1>
+
     <div class="contenedor-input-thumbs">
+
         <div class="mb-3">
+
             <label for="imagen">IMAGEN:</label>
-            <input #imagen type="file" class="form-control" id="imagen" name="imagen" accept=".jpg, .jpeg, .png"
+            <input #imagen id="imagen" type="file" name="imagen" class="form-control" accept=".jpg, .jpeg, .png"
                 (change)="upload($event)" multiple>
+
         </div>
 
+        <div *ngIf="urlImagen">
+
+            <img [src]="imagen" alt="imagen inmueble" *ngFor="let imagen of aImagenes">
+
+        </div>
 
     </div>
+
 
 </div>

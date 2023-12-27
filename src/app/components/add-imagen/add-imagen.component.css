@@ -2,20 +2,25 @@
 /* FIRST MOBILE */
 /* ================================================= */
 .contenedor{
-    padding: 5px;
+    padding:15px;
 }
-.imagen{
+
+img{
+
     width: 100px;
-    margin-left:5px;
-    margin-bottom:5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+
 }
+
 .contenedor-input-thumbs{
-  
-    display:flex;
+    
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding:40px 0;
-
+    
 }
 
 

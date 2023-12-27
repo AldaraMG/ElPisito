@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Inmueble } from '../../models/entity';
 import { InmuebleService } from '../../services/inmueble.service';
 import { Router } from '@angular/router';
+import { ComunicationService } from '../../services/comunication.service';
 
 @Component({
   selector: 'app-list-inmueble',
   templateUrl: './list-inmueble.component.html',
   styleUrl: './list-inmueble.component.css'
 })
-export class ListInmuebleComponent {
+export class ListInmuebleComponent implements OnInit {
   /////////////////////////////////////////////////
   nFases:number=1;
   cargaCompletada:boolean=false;
@@ -19,11 +20,14 @@ export class ListInmuebleComponent {
 
   constructor(
     private _inmuebleService:InmuebleService,
-    private _router:Router
+    private _router:Router,
+    private _comunicationService:ComunicationService,
+   
   ){}
 
   ngOnInit(): void {
-    
+    this._comunicationService.cambioPortada(false);
+    this._comunicationService.cambioFooter(false);
     this.getDatos();
     
   }

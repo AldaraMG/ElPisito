@@ -1,45 +1,44 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
-.contenedor{
-    padding:15px;
+.ficha{
+    width: 100%;
+    border:1px solid var(--gris-corporativo);
+    border-radius:5px;
+    padding:10px;
+    margin-bottom:15px;
+}
+.icono{
+
+    height: 24px;
 }
 
-.contenedor-boton{
+.numero-elementos{
+    font-size: 1.5rem;
+    padding-right: 2px;
+    color:bisque;
+}
+
+.titular,.precio,.poblacion{
+  font-size: 1.5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contenedor-iconos div{
     display: flex;
-    justify-content: right;
+    align-items: center;
 }
-
-form{
-
-    max-width: 25rem;
+.footer-ficha{
+ background-color: var(--gris-corporativo);
+ padding:3px 15px 3px 0;
+ border-radius: 5px;
 }
-
-.label-check{
-    margin-right: 10px;
+.contenedor-iconos{
+    display: flex;
+    justify-content: flex-end;
+    gap:10px;
 }
-
-.id-inmueble{
-
-    font-weight: bold;
-    background-color: var(--gris-corporativo);
-    border-radius: 5px;
-    padding:8px;
-    color:white;
-    margin: 0 0 5px 0;
-}
-
-h6{
-
-    font-weight: bold;
-    background-color: var(--gris-corporativo);
-    border-radius: 5px;
-    padding:8px;
-    color:white;
-    margin: 16px 0;
-    
-}
-
 
 /* ================================================= */
 /* MEDIA QUERIES */

@@ -3,6 +3,7 @@ import { PoblacionService } from '../../services/poblacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Poblacion, Provincia } from '../../models/entity';
 import { ProvinciaService } from '../../services/provincia.service';
+import { ComunicationService } from '../../services/comunication.service';
 
 @Component({
   selector: 'app-edit-poblacion',
@@ -38,12 +39,16 @@ export class EditPoblacionComponent implements OnInit {
     private _poblacionService:PoblacionService,
     private _provinciaService:ProvinciaService,
     private _route:ActivatedRoute,
-    private _router:Router
+    private _router:Router,
+    private _comunicationService:ComunicationService
   ){}
 
 
 
   ngOnInit(): void {
+
+    this._comunicationService.cambioPortada(false);
+    this._comunicationService.cambioFooter(false);
     this.getDatos();
   }
 

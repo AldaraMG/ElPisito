@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Provincia } from '../../models/entity';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProvinciaService } from '../../services/provincia.service';
+import { ComunicationService } from '../../services/comunication.service';
 
 @Component({
   selector: 'app-edit-provincia',
@@ -31,13 +32,16 @@ export class EditProvinciaComponent implements OnInit {
   constructor(
     private _provinciaService:ProvinciaService,
     private _route:ActivatedRoute,
-    private _router:Router
+    private _router:Router,
+    private _comunicationService:ComunicationService
   ){}
 
 
 
 
   ngOnInit(): void {
+    this._comunicationService.cambioPortada(false);
+    this._comunicationService.cambioFooter(false);
     this.getDatos();
   }
 

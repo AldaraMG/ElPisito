@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tipo } from '../../models/entity';
 import { TipoService } from '../../services/tipo.service';
+import { ComunicationService } from '../../services/comunication.service';
 
 @Component({
   selector: 'app-edit-tipo',
@@ -31,13 +32,16 @@ export class EditTipoComponent implements OnInit {
   constructor(
     private _tipoService:TipoService,
     private _route:ActivatedRoute,
-    private _router:Router
+    private _router:Router,
+    private _comunicationService:ComunicationService
   ){}
 
 
 
 
   ngOnInit(): void {
+    this._comunicationService.cambioPortada(false);
+    this._comunicationService.cambioFooter(false);
     this.getDatos();
   }
 

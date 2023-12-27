@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
+import { EditInmuebleComponent } from './components/edit-inmueble/edit-inmueble.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-
-
-
 import { AppComponent } from './app.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HeaderComponent } from './components/header/header.component';
@@ -32,7 +30,9 @@ import { ListInmuebleComponent } from './components/list-inmueble/list-inmueble.
 import { AddInmuebleComponent } from './components/add-inmueble/add-inmueble.component';
 import { Cabecera1Component } from './components/cabecera1/cabecera1.component';
 import { AddImagenComponent } from './components/add-imagen/add-imagen.component';
-import { ModalComponent } from './components/modal/modal.component';
+import{ApiInterceptor} from './utils/api.interceptor';
+import { FichaInmuebleComponent } from './components/ficha-inmueble/ficha-inmueble.component';
+import { CarouselFichaComponent } from './components/carousel-ficha/carousel-ficha.component';
 
 @NgModule({
   declarations: [
@@ -59,9 +59,12 @@ import { ModalComponent } from './components/modal/modal.component';
     PreloaderComponent,
     ListInmuebleComponent,
     AddInmuebleComponent,
+    EditInmuebleComponent,
     Cabecera1Component,
     AddImagenComponent,
-    ModalComponent,
+    FichaInmuebleComponent,
+    CarouselFichaComponent,
+    
  
    
   ],
@@ -72,7 +75,14 @@ import { ModalComponent } from './components/modal/modal.component';
     FormsModule,
     ModalModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:ApiInterceptor,
+      multi:true
+
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
