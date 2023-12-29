@@ -1,22 +1,32 @@
-<article class="ficha">
+<article class="ficha" >
 
-    <app-carousel-ficha></app-carousel-ficha>
-    <h3 class="titular">El Titular</h3>
-    <h3 class="poblacion">La Población</h3>
-    <p class="precio">300.000</p>
+    <app-carousel-ficha [datosCarousel]="datos"></app-carousel-ficha>
+
+    <div class="datos" [routerLink]="['/detail-inmueble',datos.id]">
+        <h3 class="titular">{{datos.titular}}</h3>
+        <h3 class="poblacion">{{datos.poblacion.nombre}}</h3>
+        <p class="precio">{{datos.precio | euros}}</p>
+
+    </div>
+
     <footer class="footer-ficha">
+        <div class="contenedor-botones-admin">
+            <button type="button" class="btn-editar btn-sm" [routerLink]="['/edit-inmueble',datos.id]">Editar</button>
+            <button type="button" class="btn-anadir btn-sm" [routerLink]="['/add-imagen',datos.id]">+Imagen</button>
+            <button type="button" class="btn-ver btn-sm" [routerLink]="['/detail-inmueble',datos.id]"><i class="fa-solid fa-eye"></i>Ver</button>
+        </div>
 
         <div class="contenedor-iconos">
-            <div >
-                <span class="numero-elementos">5</span>
+            <div>
+                <span class="numero-elementos">{{datos.numeroBanhos}}</span>
                 <img src="assets/img/004-bathtub.svg" alt="icono baño" class="icono">
             </div>
-            <div >
-                <span class="numero-elementos">2</span>
+            <div>
+                <span class="numero-elementos">{{datos.numeroHabitaciones}}</span>
                 <img src="assets/img/017-bed.svg" alt="icono habitaciones" class="icono">
             </div>
-            <div >
-                <span class="numero-elementos">4</span>
+            <div>
+                <span class="numero-planta">{{datos.planta}}</span>
                 <img src="assets/img/011-office building.svg" alt="icono altura" class="icono">
             </div>
         </div>

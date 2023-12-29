@@ -17,6 +17,10 @@ form{
     column-gap: 20px;
 }
 
+.label-check{
+    margin-right: 10px;
+}
+
 
 
 .caracteristicas {
@@ -34,6 +38,18 @@ form{
 .precio {
     background-color:var( --color-verde-activo);
     padding: 10px;
+    border-radius: 10px;
+}
+
+h6{
+
+    font-weight: bold;
+    background-color: var(--gris-corporativo);
+    border-radius: 5px;
+    padding:8px;
+    color:white;
+    margin: 16px 0;
+    
 }
 
 

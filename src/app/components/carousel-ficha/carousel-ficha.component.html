@@ -1,20 +1,51 @@
-<div id="carouselFicha" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+<div #carousel id="carouselFicha{{datosCarousel.id}}" class="carousel slide"  >
+  <div class="carousel-inner">
 
-      <div class="carousel-item active">
-        <img src="assets/img/no-image.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="assets/img/no-image.jpg" class="d-block w-100" alt="...">
-      </div>
-    
+    <!-- *ngFor en cada iteración nos provee, de forma automática (por defecto) de un índice
+    Para utilizarlo necesitamos declararlo. En la iteración 1, index = 0, en la iteración 2
+    index = 1 y así sucesivamente -->
+    <!-- También podemos utilizar first,last,even y odd -->
+    <!-- Ejemplo: 'active': i    con   let i=first solo aplica al primer elemento -->
+    <div [ngClass]="{
+      'carousel-item':true,
+      'active': i==0  
+    }" *ngFor="let imagen of datosCarousel.imagenes; let i=index">
+      <img appNoImage src="{{url+imagen.nombre}}" class="d-block w-100" alt="imagen piso">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFicha" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselFicha" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
+    <!-- EN EL CASO DE QUE NO HAYA NINGUNA IMAGEN -->
+    <div *ngIf="datosCarousel.imagenes.length == 0">
+      <img src="assets/img/no-image.jpg" class="no-imagen" alt="no imagen">
+    </div>
+
   </div>
+
+
+<!-- Botón Prev -->
+<button
+  *ngIf="datosCarousel.imagenes.length > 0"
+  class="carousel-control-prev"
+  type="button"
+  [attr.data-bs-target]="'#carouselFicha'+datosCarousel.id"
+  data-bs-slide="prev"
+  (click)="detenerIntervalo('carouselFicha' + datosCarousel.id)"
+>
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+
+<!-- Botón Next -->
+<button
+  *ngIf="datosCarousel.imagenes.length > 0"
+  class="carousel-control-next"
+  type="button"
+  [attr.data-bs-target]="'#carouselFicha'+datosCarousel.id"
+  data-bs-slide="next"
+  (click)="detenerIntervalo('carouselFicha' + datosCarousel.id)"
+>
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+
+</div>
+ 

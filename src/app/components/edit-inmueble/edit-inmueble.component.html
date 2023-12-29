@@ -10,19 +10,34 @@
             <p class="id-inmueble">ID: {{inmueble.id}}</p>
 
             <div class="mb-3">
-                <label class= "label-check" for="activo">ACTIVO</label>
-                <input id="activo" type="checkbox" name="activo"  class="form-check-input" autocomplete="off" [(ngModel)]="inmueble.activo">
-            </div>
-
-            
-            <div>
-                <label class="me-2" for="portada">PORTADA</label>
-                <input id="portada" type="checkbox" name="portada" class="form-check-input" [(ngModel)]="inmueble.portada">
-
+                <label for="titular">TÍTULO DEL ANUNCIO*</label>
+                <textarea class="form-control" name="titular" id="titular" autocomplete="off" rows="3" maxlength="255" [(ngModel)]="inmueble.titular"></textarea>
             </div>
 
 
-            <h6>DIRECCIÓN DEL INMUEBLE</h6>
+            <div class="mb-3">
+                <label for="descripcion">DESCRIPCIÓN*</label>
+                <textarea class="form-control" name="descripcion" id="descripcion" autocomplete="off" rows="3" maxlength="3500" [(ngModel)]="inmueble.descripcion"></textarea>
+            </div>
+
+        <h6>DIRECCIÓN DEL INMUEBLE</h6>
+        <div class="mb-3 direccion">
+
+            <div class="mb-3">
+                <label for="poblacion">POBLACIÓN*:</label>
+                <select name="poblacion" id="poblacion" class="form-select" required [(ngModel)]="inmueble.poblacion.id">
+                    <option [ngClass]="{'select-inactivo': poblacion.activo==0}" *ngFor="let poblacion of aPoblaciones" value="{{poblacion.id}}">{{poblacion.nombre}} ({{poblacion.provincia.nombre}})</option>
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+                <label for="tipo">TIPO*:</label>
+                <select name="tipo" id="tipo" class="form-select" required [(ngModel)]="inmueble.tipo.id">
+                    <option [ngClass]="{'select-inactivo': tipo.activo==0}" *ngFor="let tipo of aTipos" value="{{tipo.id}}">{{tipo.nombre}} </option>
+                </select>
+
+            </div>
 
             <div class="mb-3">
 
@@ -40,14 +55,8 @@
 
             <div class="mb-3">
                 <label for="nombre_via">NOMBRE VÍA*</label>
-                <input id="nombre_via" type="text" name="nombreVia" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.nombreVia">
-            </div>
-
-
-
-            <div class="mb-3">
-                <label for="numero">NÚMERO*</label>
-                <input id="numero" type="text" name="numero" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.numero">
+                <input id="nombre_via" type="text" name="nombreVia" required class="form-control" autocomplete="off" 
+                   style="text-transform:uppercase" [(ngModel)]="inmueble.nombreVia">
             </div>
 
             <div class="mb-3">
@@ -71,46 +80,23 @@
                 <input id="puerta" type="text" name="puerta" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.puerta">
             </div>
 
+
+            <div class="mb-3">
+                <label for="numero">NÚMERO*</label>
+                <input id="numero" type="text" name="numero" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.numero">
+            </div>
+
+
             <div class="mb-3">
                 <label for="cp">CP*</label>
                 <input id="cp" type="text" name="cp" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.cp">
             </div>
 
+        </div>
+        <h6>CARACTERÍSTICAS</h6>
 
-            <div>
-
-                <label for="poblacion">POBLACIÓN*:</label>
-                <select name="poblacion" id="poblacion" class="form-select" required [(ngModel)]="inmueble.poblacion.id">
-                    <option [ngClass]="{'select-inactivo': poblacion.activo==0}" *ngFor="let poblacion of aPoblaciones" value="{{poblacion.id}}">{{poblacion.nombre}} ({{poblacion.provincia.nombre}})</option>
-                </select>
-
-            </div>
-
-
-            <h6>INFORMACIÓN GENERAL</h6>
-
-            <div class="mb-3">
-                <label for="precio">PRECIO*</label>
-                <input id="precio" type="number" name="precio" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.precio">
-            </div>
-
-
-
-            <div class="mb-3">
-
-                <label for="tipo">TIPO*:</label>
-                <select name="tipo" id="tipo" class="form-select" required [(ngModel)]="inmueble.tipo.id">
-                    <option [ngClass]="{'select-inactivo': tipo.activo==0}" *ngFor="let tipo of aTipos" value="{{tipo.id}}">{{tipo.nombre}} </option>
-                </select>
-
-            </div>
-
-
-            <div class="mb-3">
-                <label for="titular">TITULAR*</label>
-                <textarea class="form-control" name="titular" id="titular" autocomplete="off" rows="3" maxlength="255" [(ngModel)]="inmueble.titular"></textarea>
-            </div>
-
+        <div class="mb-3 caracteristicas">
+         
 
             <div class="mb-3">
 
@@ -122,32 +108,6 @@
                 </select>
 
             </div>
-
-
-            <div class="mb-3">
-                <label for="descripcion">DESCRIPCIÓN*</label>
-                <textarea class="form-control" name="descripcion" id="descripcion" autocomplete="off" rows="3" maxlength="3500" [(ngModel)]="inmueble.descripcion"></textarea>
-            </div>
-
-
-            <div>
-
-                <label for="orientacion">ORIENTACIÓN*:</label>
-                <select name="orientacion" id="orientacion" class="form-select" required [(ngModel)]="inmueble.orientacion">
-                    <option value="NORTE">NORTE</option>
-                    <option value="SUR">SUR</option>
-                    <option value="ESTE">ESTE</option>
-                    <option value="OESTE">OESTE</option>
-                    <option value="NORESTE">NORESTE</option>
-                    <option value="SURESTE">SURESTE</option>
-                    <option value="NOROESTE">NOROESTE</option>
-                    <option value="SUROESTE">SUROESTE</option>
-                </select>
-
-            </div>
-
-
-            <h6>CARACTERÍSTICAS</h6>
 
             <div class="mb-3">
 
@@ -192,6 +152,25 @@
             </div>
 
 
+
+
+            <div>
+
+                <label for="orientacion">ORIENTACIÓN*:</label>
+                <select name="orientacion" id="orientacion" class="form-select" required [(ngModel)]="inmueble.orientacion">
+                    <option value="NORTE">NORTE</option>
+                    <option value="SUR">SUR</option>
+                    <option value="ESTE">ESTE</option>
+                    <option value="OESTE">OESTE</option>
+                    <option value="NORESTE">NORESTE</option>
+                    <option value="SURESTE">SURESTE</option>
+                    <option value="NOROESTE">NOROESTE</option>
+                    <option value="SUROESTE">SUROESTE</option>
+                </select>
+
+            </div>
+
+
             <div class="mb-3">
 
                 <label for="numero_habitaciones">NÚMERO DE HABITACIONES*:</label>
@@ -202,6 +181,20 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label for="tipo_calefaccion">TIPO DE CALEFACCIÓN*:</label>
+                <select name="tipoCalefaccion" id="tipo_calefaccion" class="form-select" required [(ngModel)]="inmueble.tipoCalefaccion">
+                    <option value="SIN CALEFACCIÓN">SIN CALEFACCIÓN</option>
+                    <option value="CENTRAL GAS">CENTRAL GAS</option>
+                    <option value="GAS NATURAL">GAS NATURAL</option>
+                    <option value="ELÉCTRICA">ELÉCTRICA</option>
+                    <option value="PROPANO">PROPANO</option>
+           
                 </select>
 
             </div>
@@ -220,22 +213,9 @@
             </div>
 
 
-            <div class="mb-3">
-
-                <label for="tipo_calefaccion">TIPO DE CALEFACCIÓN*:</label>
-                <select name="tipoCalefaccion" id="tipo_calefaccion" class="form-select" required [(ngModel)]="inmueble.tipoCalefaccion">
-                    <option value="SIN CALEFACCIÓN">SIN CALEFACCIÓN</option>
-                    <option value="CENTRAL GAS">CENTRAL GAS</option>
-                    <option value="GAS NATURAL">GAS NATURAL</option>
-                    <option value="ELÉCTRICA">ELÉCTRICA</option>
-                    <option value="PROPANO">PROPANO</option>
-           
-                </select>
-
-            </div>
-
-
-
+        </div>
+        <h6>CARACTERÍSTICAS ADICIONALES</h6>
+        <div class="check">
             <div class="mb-4">
                 <label class="me-2" for="ascensor">ASCENSOR</label>
                 <input id="ascensor" type="checkbox" name="ascensor" class="form-check-input" [(ngModel)]="inmueble.ascensor">
@@ -273,14 +253,34 @@
                 <input id="jardin" type="checkbox" name="jardin" class="form-check-input" [(ngModel)]="inmueble.jardin">
 
             </div>
+        </div>
 
 
+            <h1>PRECIO</h1>
+           
+            <div class="mb-3 precio">
+
+               
+                    <label for="precio">PRECIO*</label>
+                    <input id="precio" type="number" name="precio" required class="form-control" autocomplete="off" style="text-transform:uppercase" [(ngModel)]="inmueble.precio">
+            </div>   
 
 
+                <label class= "label-check" for="activo">ACTIVO</label>
+                <input id="activo" type="checkbox" name="activo"  class="form-check-input" autocomplete="off" [(ngModel)]="inmueble.activo">
+            
 
+            
+               <div class="mb-4">
+                <label class="me-2" for="portada">DESTACAR</label>
+                <input id="portada" type="checkbox" name="portada" class="form-check-input" [(ngModel)]="inmueble.portada">
+
+               </div>
+
+          
 
             <div class="contenedor-boton">
-                <button type="submit" class="btn btn-md btn-primary" [disabled]="form.invalid">Modificar</button>
+                <button type="submit" class="btn-editar" [disabled]="form.invalid">Modificar</button>
             </div>
 
 

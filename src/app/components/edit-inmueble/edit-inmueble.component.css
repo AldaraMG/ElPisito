@@ -2,21 +2,34 @@
 /* FIRST MOBILE */
 /* ================================================= */
 .contenedor{
-    padding:15px;
+    padding:5px;
 }
 
 .contenedor-boton{
     display: flex;
-    justify-content: right;
+    justify-content: center;;
 }
 
 form{
 
-    max-width: 25rem;
+    max-width: 30rem;
+}
+.direccion {
+    column-count: 2;
+    column-gap: 20px;
 }
 
 .label-check{
     margin-right: 10px;
+}
+
+.caracteristicas {
+    column-count: 2;
+    column-gap: 20px; 
+}
+.check {
+    column-count: 2;
+    column-gap: 20px; 
 }
 
 .id-inmueble{
@@ -27,6 +40,12 @@ form{
     padding:8px;
     color:white;
     margin: 0 0 5px 0;
+}
+/* Estilos para el div de precio */
+.precio {
+    background-color:var( --color-verde-activo);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 h6{

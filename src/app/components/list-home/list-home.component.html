@@ -1,4 +1,9 @@
 <section class="conteendor">
-  <h2>Titular</h2>
-  <app-ficha-inmueble></app-ficha-inmueble>
+  <h2>Anuncios Destacados</h2>
+
+  <div class="contenedor-fichas">
+    <app-ficha-inmueble class="ficha"[datos]="inmueble" *ngFor="let inmueble of aDatos" ></app-ficha-inmueble>
+  </div>
+
+ 
 </section>

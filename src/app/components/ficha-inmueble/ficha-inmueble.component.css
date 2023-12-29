@@ -2,11 +2,12 @@
 /* FIRST MOBILE */
 /* ================================================= */
 .ficha{
-    width: 100%;
+    /* width: 100%; */
     border:1px solid var(--gris-corporativo);
     border-radius:5px;
     padding:10px;
     margin-bottom:15px;
+  
 }
 .icono{
 
@@ -15,15 +16,31 @@
 
 .numero-elementos{
     font-size: 1.5rem;
-    padding-right: 2px;
+    padding-right: 3px;
     color:bisque;
 }
 
-.titular,.precio,.poblacion{
-  font-size: 1.5px;
-  display: flex;
-  justify-content: flex-end;
+.numero-planta{
+    font-size: 1rem;
+    padding-right: 5px;
+    color:bisque;
 }
+
+.titular,.poblacion{
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.datos{
+    padding:10px 0 5px 10px;
+    cursor:pointer;
+}
+.precio{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+  }
 
 .contenedor-iconos div{
     display: flex;
@@ -31,13 +48,20 @@
 }
 .footer-ficha{
  background-color: var(--gris-corporativo);
- padding:3px 15px 3px 0;
+ padding:3px 15px 3px 15px;
  border-radius: 5px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 .contenedor-iconos{
     display: flex;
     justify-content: flex-end;
     gap:10px;
+}
+
+.contenedor-botones-admin button{
+    margin-right: 10px;
 }
 
 /* ================================================= */
@@ -46,12 +70,46 @@
 
 /* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
 @media only screen and (min-width:576px){
+    
+    .contenedor-iconos {
+      
+        flex-wrap: wrap; /* Agregamos flex-wrap */
+        display: flex;
+        justify-content: space-around; /* Otra opción: space-between */
+        
+    }
+    .contenedor-iconos div {
+        text-align: center; /* Alinea el texto en el centro */
+        flex: 1; /* Hace que cada div tenga la misma proporción de espacio disponible */
+        margin: 0 10px; /* Ajusta el margen entre los divs según tus necesidades */
+      }
 
+      .numero-elementos, .numero-planta {
+        font-size: 1rem;
+        padding-right: 3px;
+        color: bisque;
+      }
+      .contenedor-iconos div:last-child {
+        margin-right: 0; /* Elimina el margen derecho del último elemento */
+      }
+      
+      .btn-editar,
+      .btn-anadir,
+      .btn-ver {
+        margin-top: 8px; /* Ajusta el margen entre los botones según tus necesidades */
+      }
+
+
+
+   
+    }
+
+   
  
 
 
 
-}
+
 
 
 /* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */

@@ -33,6 +33,11 @@ import { AddImagenComponent } from './components/add-imagen/add-imagen.component
 import{ApiInterceptor} from './utils/api.interceptor';
 import { FichaInmuebleComponent } from './components/ficha-inmueble/ficha-inmueble.component';
 import { CarouselFichaComponent } from './components/carousel-ficha/carousel-ficha.component';
+import { NoImageDirective } from './directives/no-image.directive';
+import { EurosPipe } from './pipes/euros.pipe';
+import { DetailInmuebleComponent } from './components/detail-inmueble/detail-inmueble.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +69,10 @@ import { CarouselFichaComponent } from './components/carousel-ficha/carousel-fic
     AddImagenComponent,
     FichaInmuebleComponent,
     CarouselFichaComponent,
+    NoImageDirective,
+    EurosPipe,
+    DetailInmuebleComponent,
+   
     
  
    
@@ -74,6 +83,9 @@ import { CarouselFichaComponent } from './components/carousel-ficha/carousel-fic
     HttpClientModule,
     FormsModule,
     ModalModule,
+  
+    CarouselModule.forRoot(),
+   
   ],
   providers: [
     {
