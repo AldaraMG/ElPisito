@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   styleUrl: './list-home.component.css'
 })
 export class ListHomeComponent implements OnInit {
+   /////////////////////////////////////////////////
+ nFases:number=1;
+ cargaCompletada:boolean=false;
+ fasesCargadas:number=0;
+ /////////////////////////////////////////////////
 
   aDatos:any[] = [];
   constructor(
@@ -29,7 +34,17 @@ export class ListHomeComponent implements OnInit {
         this.aDatos = datos;
       },
       error: (error) => { this._router.navigate(['/error']) },
-      complete: () => { }
+      complete: () => {this.faseCarga() }
     })
   }
+   ////////////////////////////////////////////////
+   faseCarga():void{
+
+    this.fasesCargadas++;
+    if(this.fasesCargadas == this.nFases){
+      this.cargaCompletada = true;
+    }
+
+  }
+  ////////////////////////////////////////////////
 }

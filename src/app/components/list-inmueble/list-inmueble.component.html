@@ -10,6 +10,7 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">OPERACIÓN</th>
                     <th scope="col">TIPO</th>
                     <th scope="col">DIRECCIÓN</th>
                     <th class="activo" scope="col">ACTIVO</th>
@@ -20,6 +21,7 @@
             <tbody>
                 <tr *ngFor="let dato of aDatos">
                     <th scope="row">{{dato.id}}</th>
+                    <td scope="row">{{dato.operacion}}</td>
                     <td>{{dato.tipo.nombre}}</td>
                     <td>{{dato.direccionCompleta}}</td>
                     <td [ngClass]="{

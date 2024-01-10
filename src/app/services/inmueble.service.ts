@@ -9,31 +9,43 @@ import { Observable } from 'rxjs';
 })
 export class InmuebleService {
 
-  
+
   url:string=GLOBAL.url;
   constructor(
 
     private _http:HttpClient
   ) { }
 
-//PARA ADMINISTRADORES
+ 
+  /*PARA ADMINISTRACIÓN */
   getInmuebles():Observable<Inmueble[]>{
 
     return this._http.get<Inmueble[]>(this.url + "inmuebles");
 
   }
-//PARA PORTADA
+
+  /*PARA LA PORTADA*/
   getInmueblesPortada():Observable<Inmueble[]>{
 
     return this._http.get<Inmueble[]>(this.url + "inmuebles-portada");
 
   }
-  //PARA LA VENTA
+
+  /*PARA LA VENTA*/
   getInmueblesActivos():Observable<Inmueble[]>{
 
     return this._http.get<Inmueble[]>(this.url + "inmuebles-activos");
 
   }
+
+
+  /*PARA LA VENTA DESDE EL BUSCADOR*/
+  getInmueblesFinder(tipo:number, poblacion:number, operacion:string):Observable<Inmueble[]>{
+
+    return this._http.get<Inmueble[]>(this.url + "inmuebles/" + tipo + "/" + poblacion + "/" + operacion);
+  }
+
+
 
 
   getInmueble(id:number):Observable<Inmueble>{

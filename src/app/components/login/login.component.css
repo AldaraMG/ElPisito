@@ -1,33 +1,17 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
-.contenedor-logo{
+.contenedor{
+    padding-bottom: 20px;
+}
+
+.contenedor-boton{
     display: flex;
-    align-items: center;
-}
-.texto-logo{
-    font-size: 1.2rem;
-    padding-left: 0.8rem;
-    font-weight: bold;
-    color:var(--verde-corporativo);
-}
-.imagen-logo{
-    height: 50px;
+    justify-content: right;
 }
 
-.navbar {
-    background-color: var(--gris-corporativo);
-}
-.navbar a{
-   color:var( --amarillo-corporativo)
-}
-
-.dropdown-menu a{
-    
-    color:var(--gris-corporativo);
-}
-.dropdown-menu {
-    background-color:rgb(229, 228, 225);
+form{
+    max-width: 25rem;
 }
 
 /* ================================================= */

@@ -10,27 +10,17 @@
 .ficha{
     width: 100%;
 }
-.oportunidades{
-    display: flex;
+.contenedor{
+    padding: 0 12px;
+}
+.busqueda{
     background-color: var(--azul-corporativo);
-    border-radius: 10px;
-    padding: 10px;
-    align-items: center;
+}
+h3 span{
+    color: var(--rosa-corporativo);
 }
 
-.imagen-logo{
-    height: 50px;
-    margin-left: 10px;
-}
-.imagen-logo2{
-    height: 50px;
-    margin-left: 10px;
-    
-}
-.imagen-logo3{
-    height: 50px;
-    margin-left: 10px;
-}
+
 
 /* ================================================= */
 /* MEDIA QUERIES */

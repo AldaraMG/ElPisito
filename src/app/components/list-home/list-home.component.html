@@ -1,7 +1,12 @@
-<section class="conteendor">
-  <h2>Anuncios Destacados</h2>
+<section class="contenedor">
+  <h2 class="oportunidades">Inmuebles Destacados!!
+  <img class="imagen-logo" src="assets/img/logo_transparent.png" alt="logo El Pisito">
+  <img class="imagen-logo2" src="assets/img/logo_transparent.png" alt="logo El Pisito">
+  <img class="imagen-logo3" src="assets/img/logo_transparent.png" alt="logo El Pisito">
+</h2>
+  <app-preloader *ngIf="!cargaCompletada"></app-preloader>
 
-  <div class="contenedor-fichas">
+  <div *ngIf="cargaCompletada"class="contenedor-fichas">
     <app-ficha-inmueble class="ficha"[datos]="inmueble" *ngFor="let inmueble of aDatos" ></app-ficha-inmueble>
   </div>
 

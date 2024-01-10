@@ -1,0 +1,132 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.precio {
+    font-size: 1.5rem;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.contenedor {
+    padding: 25px 15px;
+}
+
+.icono {
+    height: 24px;
+}
+
+.contenedor-iconos {
+    display: flex;
+    gap: 15px;
+
+}
+
+.contenedor-iconos-precio {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--gris-corporativo);
+    padding: 5px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.contenedor-iconos div {
+    display: flex;
+    align-items: center;
+}
+
+.numero-elementos,
+.numero-planta {
+    font-size: 1rem;
+    padding-right: 2px;
+    color: bisque;
+}
+
+.contenedor-icono-planta {
+    margin-right: 15px;
+}
+
+.contenedor-datos-basicos {
+    background-color: var(--naranja-corporativo);
+    padding: 15px;
+}
+
+.contenedor-muebles-acabados {
+    background-color: var(--naranja-corporativo);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.contenedor-equipamientos-instalaciones {
+    background-color: var(--naranja-corporativo);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.contenedor-datos-basicos i {
+    margin-right: 10px;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: var(--rosa-corporativo);
+    margin-top: 10px;
+
+}
+
+.contenedor-muebles-acabados i {
+
+    margin-right: 10px;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: var(--rosa-corporativo);
+    margin-top: 10px;
+
+}
+
+.contenedor-equipamientos-instalaciones i {
+
+    margin-right: 10px;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: var(--rosa-corporativo);
+    margin-top: 10px;
+
+}
+
+
+
+.subseccion {
+    background-color: var(--rosa-corporativo);
+    margin-top: 20px;
+}
+
+h1 {
+    margin-top: 20px
+}
+
+
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px) {}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px) {}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px) {}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px) {}

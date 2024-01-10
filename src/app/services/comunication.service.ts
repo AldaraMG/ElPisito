@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,12 @@ export class ComunicationService {
   estadoFooter = new BehaviorSubject(true);
   footer$ = this.estadoFooter.asObservable();
 
-  constructor() { }
+  logueo = new BehaviorSubject(this._authService.isLoggedIn());
+  logueo$ = this.logueo.asObservable();
+
+  constructor(
+    private _authService:AuthService
+  ) { }
 
   /* Este método será llamado por el componente que desee enviar la información 
   mandando el dato (estado).
@@ -33,4 +39,9 @@ export class ComunicationService {
     this.estadoFooter.next(estado);
   }
 
+
+  cambioLogueo(estado:boolean):void{
+
+    this.logueo.next(estado);
+  }
 }

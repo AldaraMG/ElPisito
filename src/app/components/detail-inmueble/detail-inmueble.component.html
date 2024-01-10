@@ -1,1 +1,89 @@
-<p>detail-inmueble works!</p>
+<div class="contenedor">
+
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+
+    <section *ngIf="cargaCompletada" class="contenido-ficha">
+        <app-carousel-ficha [datosCarousel]="elInmueble"></app-carousel-ficha>
+        <h1>{{elInmueble.titular}}({{elInmueble.poblacion.nombre}})</h1>
+        
+        <div class="contenedor-iconos-precio">
+            <p class="precio">{{elInmueble.precio | euros}}</p>
+
+            <div class="contenedor-iconos">
+                <div>
+                    <span class="numero-elementos">{{elInmueble.numeroBanhos}}</span>
+                    <img src="assets/img/004-bathtub.svg" alt="icono baño" class="icono">
+                </div>
+                <div>
+                    <span class="numero-elementos">{{elInmueble.numeroHabitaciones}}</span>
+                    <img src="assets/img/017-bed.svg" alt="icono habitaciones" class="icono">
+                </div>
+                <div>
+                    <span class="numero-planta">{{elInmueble.planta}}</span>
+                    <img src="assets/img/011-office building.svg" alt="icono altura" class="icono">
+                </div>
+            </div>
+
+
+        </div>
+
+        <h5 class="subseccion">Descripción</h5>
+        <div class="contenedor-descripccion">
+            <p>{{elInmueble.descripcion}}</p>
+        </div>
+        <h5 class="subseccion">Detalles básicos</h5>
+        <div class="contenedor-datos-basicos">
+
+            <div>
+                <i class="fa-solid fa-ruler-combined"></i><span>Superficie
+                    Construida:{{elInmueble.superficieConstruida | metrosCuadrados}}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-ruler-combined"></i><span>Superficie Útil:{{elInmueble.superficieUtil}}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-bed"></i><span>Habitaciones{{elInmueble.numeroHabitaciones}}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-bath"></i><span>Baños{{elInmueble.numeroBanos}}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-building"></i><span>Planta{{elInmueble.planta}}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-building"></i><span>Apertura{{elInmueble.apertura}}</span>
+            </div>
+
+        </div>
+        <h5 class="subseccion">Muebles y acabados</h5>
+        <div class="contenedor-muebles-acabados">
+            <div>
+                <i class="fa-solid fa-couch"></i><span>{{elInmueble.amueblado | amueblado }}</span>
+            </div>
+        </div>
+        <h5 class="subseccion">Equipamiento e instalaciones</h5>
+
+        <div class="contenedor-equipamientos-instalaciones">
+            <div>
+                <i class="fa-solid fa-house-fire"></i><span>Calefacción:{{elInmueble.tipoCalefaccion }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-warehouse"></i><span>Garaje:{{elInmueble.plazasGaraje| sino }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-elevator"></i><span>Ascensor:{{elInmueble.ascensor| sino }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-boxes-packing"></i><span>Trastero:{{elInmueble.trastero| sino }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-water-ladder"></i><span>Piscina:{{elInmueble.piscina| sino }}</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-leaf"></i><span>Piscina:{{elInmueble.jardin| sino }}</span>
+            </div>
+        </div>
+
+
+    </section>
+</div>

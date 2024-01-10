@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,13 @@ import { NoImageDirective } from './directives/no-image.directive';
 import { EurosPipe } from './pipes/euros.pipe';
 import { DetailInmuebleComponent } from './components/detail-inmueble/detail-inmueble.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { MetrosCuadradosPipe } from './pipes/metros-cuadrados.pipe';
+import { AmuebladoPipe } from './pipes/amueblado.pipe';
+import { SinoPipe } from './pipes/sino.pipe';
+
+import { ListFinderComponent } from './components/list-finder/list-finder.component';
+import { FinderComponent } from './components/finder/finder.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -72,6 +80,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     NoImageDirective,
     EurosPipe,
     DetailInmuebleComponent,
+    MetrosCuadradosPipe,
+    AmuebladoPipe,
+    SinoPipe,
+  
+    ListFinderComponent,
+    FinderComponent,
+    LoginComponent,
    
     
  
@@ -83,6 +98,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     HttpClientModule,
     FormsModule,
     ModalModule,
+    ReactiveFormsModule,
   
     CarouselModule.forRoot(),
    

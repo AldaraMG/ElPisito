@@ -4,10 +4,11 @@
     --azul-corporativo: #C4E7EE;
     --amarillo-corporativo: #F7F0D4;
     --gris-corporativo: #a6a19e;
-    --rosa-corporativo:#f0d2e4;
+    --rosa-corporativo:rgb(251, 216, 214);
+    --verde-corporativo:rgba(220, 237, 193, 1);
     --naranja-corporativo:#f0e3d2;
     --color-rojo-activo:rgb(239, 129, 151);
-    --color-verde-activo:rgb(184, 223, 184);
+    --color-verde-activo:rgb(220, 237, 193, 1);
    
    
 

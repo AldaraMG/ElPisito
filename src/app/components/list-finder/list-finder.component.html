@@ -1,0 +1,22 @@
+<section class="contenedor">
+
+  <div class="criterios-busqueda">
+      <h3>TIPO: <span>{{nombreTipo}}</span></h3>
+      <h3>POBLACIÓN: <span>{{nombrePoblacion}}</span></h3>
+      <h3>OPERACIÓN: <span>{{operacion}}</span></h3>
+      <h3 *ngIf="cartelNoInmuebles">No existe ningún inmueble con esos criterios de búsqueda</h3>
+
+  </div>
+
+
+      <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+
+      <div *ngIf="cargaCompletada" class="contenedor-fichas">
+
+          <app-ficha-inmueble class="ficha" [datos]="inmueble" *ngFor="let inmueble of aDatos"></app-ficha-inmueble>
+
+      </div>
+
+      
+
+</section>

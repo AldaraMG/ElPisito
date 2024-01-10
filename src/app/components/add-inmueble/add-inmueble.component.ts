@@ -39,6 +39,7 @@ fasesCargadas:number=0;
     numeroBalcones:"",
     numeroBanhos:"",
     numeroHabitaciones:"",
+    operacion:"",
     orientacion:"",
     piscina:0,
     planta:"",

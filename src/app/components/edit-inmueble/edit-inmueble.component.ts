@@ -39,6 +39,7 @@ export class EditInmuebleComponent {
      numeroBalcones:"",
      numeroBanhos:"",
      numeroHabitaciones:"",
+     operacion:"",
      orientacion:"",
      piscina:0,
      planta:"",
@@ -108,10 +109,10 @@ export class EditInmuebleComponent {
 
    this._inmuebleService.getInmueble(this.id).subscribe({
 
-     next: (datos)=>{
+     next: (datos)=>{this.inmueble = datos;
 
          //Mapeamos los datos en la interface inmueble preparada para ello
-         this.inmueble = datos;
+       
 
          /* this.inmueble.id= datos.id;
          this.inmueble.activo= datos.activo; //Asigna el 1 como true y el 0 como false
@@ -126,6 +127,7 @@ export class EditInmuebleComponent {
          this.inmueble.numeroBalcones=datos.numeroBalcones;
          this.inmueble.numeroBanhos=datos.numeroBanhos;
          this.inmueble.numeroHabitaciones=datos.numeroHabitaciones;
+          this.inmueble.operacion=datos.operacion;
          this.inmueble.orientacion=datos.orientacion;
          this.inmueble.piscina=datos.piscina;
          this.inmueble.planta=datos.planta;

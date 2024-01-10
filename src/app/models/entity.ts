@@ -40,6 +40,7 @@ export interface Inmueble{
     numeroBalcones:string;
     numeroBanhos:string;
     numeroHabitaciones:string;
+    operacion:string;
     orientacion:string;
     piscina:number;
     planta:string;
@@ -63,7 +64,7 @@ export interface Inmueble{
 
 export interface Credentials{
 
-    username:string;
-    password:string;
+    username:String;
+    password:String;
 
 }

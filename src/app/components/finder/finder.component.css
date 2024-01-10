@@ -1,33 +1,26 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
-.contenedor-logo{
+
+.contenedor-boton{
     display: flex;
-    align-items: center;
+    justify-content: center;;
 }
-.texto-logo{
-    font-size: 1.2rem;
-    padding-left: 0.8rem;
-    font-weight: bold;
-    color:var(--verde-corporativo);
-}
-.imagen-logo{
-    height: 50px;
+.contenedor{
+    padding:20px;
+    background-color: var(--verde-corporativo);
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-.navbar {
-    background-color: var(--gris-corporativo);
-}
-.navbar a{
-   color:var( --amarillo-corporativo)
-}
+form{
 
-.dropdown-menu a{
-    
-    color:var(--gris-corporativo);
+    max-width: 30rem;
 }
-.dropdown-menu {
-    background-color:rgb(229, 228, 225);
+.titulo-busqueda{
+   background-color: var(--naranja-corporativo);
+   padding: 15px;
+   border-radius: 10px;
 }
 
 /* ================================================= */
@@ -42,7 +35,6 @@
 
 
 }
-
 
 /* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
 @media only screen and (min-width:768px){
