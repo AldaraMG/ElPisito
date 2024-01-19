@@ -11,7 +11,7 @@
         <div class="mb-3">
             <label for="titular">TÍTULO DEL ANUNCIO*</label>
             <textarea class="form-control" name="titular" id="titular" autocomplete="off" rows="2" maxlength="100"
-                [(ngModel)]="inmueble.titular"></textarea>
+            style="text-transform: uppercase" [(ngModel)]="inmueble.titular"></textarea>
         </div>
         <div class="mb-3">
             <label for="descripcion">DESCRIPCIÓN*</label>
@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
             <label for="operacion">OPERACIÓN*:</label>
-            <select name="operacion" id="operacion" class="form-select" required [(ngModel)]="inmueble.operacion">
+            <select name="operacion" id="operacion" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.operacion">
                 <option value="VENTA">VENTA</option>
                 <option value="ALQUILER">ALQUILER</option>
                 <option value="TRASPASO">TRASPASO</option>
@@ -35,7 +35,7 @@
         
             <div class="mb-3">
                 <label for="poblacion">POBLACIÓN*:</label>
-                <select name="poblacion" id="poblacion" class="form-select" required [(ngModel)]="inmueble.poblacion.id">
+                <select name="poblacion" id="poblacion" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.poblacion.id">
                     <option [ngClass]="{'select-inactivo': poblacion.activo==0}" *ngFor="let poblacion of aPoblaciones"
                         value="{{poblacion.id}}">{{poblacion.nombre}} ({{poblacion.provincia.nombre}})</option>
                 </select>
@@ -43,7 +43,7 @@
         
             <div class="mb-3">
                 <label for="tipo">TIPO*:</label>
-                <select name="tipo" id="tipo" class="form-select" required [(ngModel)]="inmueble.tipo.id">
+                <select name="tipo" id="tipo" class="form-select" required style="text-transform: uppercase"  [(ngModel)]="inmueble.tipo.id">
                     <option [ngClass]="{'select-inactivo': tipo.activo==0}" *ngFor="let tipo of aTipos"
                         value="{{tipo.id}}">{{tipo.nombre}}</option>
                 </select>
@@ -51,7 +51,7 @@
         
             <div class="mb-3">
                 <label for="via">VÍA*:</label>
-                <select name="via" id="via" class="form-select" required [(ngModel)]="inmueble.via">
+                <select name="via" id="via" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.via">
                     <option value="CALLE">CALLE</option>
                     <option value="PLAZA">PLAZA</option>
                     <option value="AVENIDA">AVENIDA</option>
@@ -63,12 +63,12 @@
             <div class="mb-3">
                 <label for="nombre_via">NOMBRE VÍA*</label>
                 <input id="nombre_via" type="text" name="nombreVia" required class="form-control" autocomplete="off"
-                    style="text-transform: uppercase" [(ngModel)]="inmueble.nombreVia">
+                    style="text-transform: uppercase" style="text-transform: uppercase"  [(ngModel)]="inmueble.nombreVia">
             </div>
         
             <div class="mb-3">
                 <label for="planta">PLANTA*:</label>
-                <select name="planta" id="planta" class="form-select" required [(ngModel)]="inmueble.planta">
+                <select name="planta" id="planta" class="form-select" required style="text-transform: uppercase"  style="text-transform: uppercase" [(ngModel)]="inmueble.planta">
                     <option value="BAJO">BAJO</option>
                     <option value="PRIMERA">PRIMERA</option>
                     <option value="SEGUNDA">SEGUNDA</option>
@@ -83,13 +83,13 @@
             <div class="mb-3">
                 <label for="puerta">PUERTA*</label>
                 <input id="puerta" type="text" name="puerta" required class="form-control" autocomplete="off"
-                    style="text-transform: uppercase" [(ngModel)]="inmueble.puerta">
+                    style="text-transform: uppercase" style="text-transform: uppercase"  [(ngModel)]="inmueble.puerta" >
             </div>
         
             <div class="mb-3">
                 <label for="numero">NÚMERO*</label>
                 <input id="numero" type="text" name="numero" required class="form-control" autocomplete="off"
-                    style="text-transform: uppercase" [(ngModel)]="inmueble.numero">
+                    style="text-transform: uppercase"  style="text-transform: uppercase" [(ngModel)]="inmueble.numero">
             </div>
         
             <div class="mb-3">
@@ -103,7 +103,7 @@
         <div class=" mb-3 caracteristicas ">
             <div class="mb-3">
                 <label for="apertura">APERTURA*:</label>
-                <select name="apertura" id="apertura" class="form-select" required [(ngModel)]="inmueble.apertura">
+                <select name="apertura" id="apertura" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.apertura">
                     <option value="INTERIOR">INTERIOR</option>
                     <option value="EXTERIOR">EXTERIOR</option>
                     <option value="SEMI EXTERIOR">SEMI EXTERIOR</option>
@@ -112,7 +112,7 @@
         
             <div class="mb-3">
                 <label for="plazas_garaje">PLAZAS DE GARAJE*:</label>
-                <select name="plazasGaraje" id="plazas_garaje" class="form-select" required [(ngModel)]="inmueble.plazasGaraje">
+                <select name="plazasGaraje" id="plazas_garaje" class="form-select" required style="text-transform: uppercase"  [(ngModel)]="inmueble.plazasGaraje">
                     <option value="0">NINGUNA</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -124,7 +124,7 @@
         
             <div class="mb-3">
                 <label for="numero_balcones">NÚMERO DE BALCONES*:</label>
-                <select name="numeroBalcones" id="numero_balcones" class="form-select" required [(ngModel)]="inmueble.numeroBalcones">
+                <select name="numeroBalcones" id="numero_balcones" class="form-select" required style="text-transform: uppercase"  [(ngModel)]="inmueble.numeroBalcones">
                     <option value="0">NINGUNO</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -136,7 +136,7 @@
         
             <div class="mb-3">
                 <label for="numero_banhos">NÚMERO DE BAÑOS*:</label>
-                <select name="numeroBanhos" id="numero_banhos" class="form-select" required [(ngModel)]="inmueble.numeroBanhos">
+                <select name="numeroBanhos" id="numero_banhos" class="form-select" required style="text-transform: uppercase"  [(ngModel)]="inmueble.numeroBanhos">
                     <option value="0">NINGUNO</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -148,7 +148,7 @@
         
             <div class="mb-3">
                 <label for="orientacion">ORIENTACIÓN*:</label>
-                <select name="orientacion" id="orientacion" class="form-select" required [(ngModel)]="inmueble.orientacion">
+                <select name="orientacion" id="orientacion" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.orientacion">
                     <option value="NORTE">NORTE</option>
                     <option value="SUR">SUR</option>
                     <option value="ESTE">ESTE</option>
@@ -164,7 +164,7 @@
         
             <div class="mb-3">
                 <label for="numero_habitaciones">NÚMERO DE HABITACIONES*:</label>
-                <select name="numeroHabitaciones" id="numero_habitaciones" class="form-select" required [(ngModel)]="inmueble.numeroHabitaciones">
+                <select name="numeroHabitaciones" id="numero_habitaciones" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.numeroHabitaciones">
                     <option value="0">NINGUNA</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -176,7 +176,7 @@
         
             <div class="mb-3">
                 <label for="tipo_calefaccion">TIPO DE CALEFACCIÓN*:</label>
-                <select name="tipoCalefaccion" id="tipo_calefaccion" class="form-select" required [(ngModel)]="inmueble.tipoCalefaccion">
+                <select name="tipoCalefaccion" id="tipo_calefaccion" class="form-select" required  style="text-transform: uppercase" [(ngModel)]="inmueble.tipoCalefaccion">
                     <option value="SIN CALEFACCIÓN">SIN CALEFACCIÓN</option>
                     <option value="CENTRAL GAS">CENTRAL GAS</option>
                     <option value="GAS NATURAL">GAS NATURAL</option>

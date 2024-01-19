@@ -29,7 +29,7 @@
 
         <h5 class="subseccion">Descripción</h5>
         <div class="contenedor-descripccion">
-            <p>{{elInmueble.descripcion}}</p>
+            <p>{{elInmueble.descripcion}}</p> <p>{{elInmueble.operacion}}</p>
         </div>
         <h5 class="subseccion">Detalles básicos</h5>
         <div class="contenedor-datos-basicos">
@@ -42,16 +42,16 @@
                 <i class="fa-solid fa-ruler-combined"></i><span>Superficie Útil:{{elInmueble.superficieUtil}}</span>
             </div>
             <div>
-                <i class="fa-solid fa-bed"></i><span>Habitaciones{{elInmueble.numeroHabitaciones}}</span>
+                <i class="fa-solid fa-bed"></i><span>Habitaciones:{{elInmueble.numeroHabitaciones}}</span>
             </div>
             <div>
                 <i class="fa-solid fa-bath"></i><span>Baños{{elInmueble.numeroBanos}}</span>
             </div>
             <div>
-                <i class="fa-solid fa-building"></i><span>Planta{{elInmueble.planta}}</span>
+                <i class="fa-solid fa-building"></i><span>Planta:{{elInmueble.planta}}</span>
             </div>
             <div>
-                <i class="fa-solid fa-building"></i><span>Apertura{{elInmueble.apertura}}</span>
+                <i class="fa-solid fa-building"></i><span>Apertura:{{elInmueble.apertura}}</span>
             </div>
 
         </div>
@@ -80,7 +80,7 @@
                 <i class="fa-solid fa-water-ladder"></i><span>Piscina:{{elInmueble.piscina| sino }}</span>
             </div>
             <div>
-                <i class="fa-solid fa-leaf"></i><span>Piscina:{{elInmueble.jardin| sino }}</span>
+                <i class="fa-solid fa-leaf"></i><span>Jardin:{{elInmueble.jardin| sino }}</span>
             </div>
         </div>
 

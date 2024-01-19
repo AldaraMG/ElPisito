@@ -45,6 +45,9 @@ import { SinoPipe } from './pipes/sino.pipe';
 import { ListFinderComponent } from './components/list-finder/list-finder.component';
 import { FinderComponent } from './components/finder/finder.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ListUsuarioComponent } from './components/list-usuario/list-usuario.component';
+import { EditUsuarioComponent } from './components/edit-usuario/edit-usuario.component';
 
 
 @NgModule({
@@ -87,6 +90,9 @@ import { LoginComponent } from './components/login/login.component';
     ListFinderComponent,
     FinderComponent,
     LoginComponent,
+    SignUpComponent,
+    ListUsuarioComponent,
+    EditUsuarioComponent,
    
     
  

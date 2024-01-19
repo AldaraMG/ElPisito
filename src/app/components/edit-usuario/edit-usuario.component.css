@@ -1,31 +1,27 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
-
-/* Estilo para las imágenes dentro del carousel */
-.carousel-inner{
-    text-align: center;
-
+.contenedor{
+    padding: 5px;
 }
-.carousel-inner .carousel-item img {
-    max-width: 80%;
-    height: auto;
-    margin: 0 auto;
-  }
-.no-imagen{
- 
-    width: 100%;
-    height: auto;
-}
-/* Estilo para los botones de "Prev" y "Next" */
-.carousel-control-prev,
-.carousel-control-next {
-  font-size: 1.5rem; /* Ajusta el tamaño de la fuente según tus preferencias */
-  width: 40%; /* Ajusta el ancho del botón según tus preferencias */
-  height: auto;
+.contenedor-boton{
+    display: flex;
+    justify-content: center;
 }
 
-
+form{
+    max-width: 25rem;
+}
+.label-check{
+    margin-right: 10px;
+}
+.id-tipo{
+   font-weight: bold;
+   background-color: bisque;
+   border-radius: 8px;
+   padding: 5px;
+   margin: 0 0 5px 0;
+}
 
 
 /* ================================================= */

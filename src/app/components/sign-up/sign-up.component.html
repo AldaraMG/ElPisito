@@ -1,0 +1,30 @@
+<div class="contenedor">
+    <h1>Registro</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="mb-3">
+            <label for="usuario">USUARIX*</label>
+            <input type="text" class="form-control" id="user" name="user" autocomplete="off" required
+                [class.is-invalid]="registerForm.get('elUsuario')?.invalid && registerForm.get('elUsuario')?.touched"
+                formControlName="elUsuario">
+        </div>
+
+        <div class="mb-3">
+            <label for="email">EMAIL*</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="off" required
+                [class.is-invalid]="registerForm.get('elEmail')?.invalid && registerForm.get('elEmail')?.touched"
+                formControlName="elEmail">
+        </div>
+
+        <div class="mb-3">
+            <label for="password">PASSWORD*</label>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="off" required
+                [class.is-invalid]="registerForm.get('elPassword')?.invalid && registerForm.get('elPassword')?.touched"
+                formControlName="elPassword">
+        </div>
+
+        <div class="contenedor-boton">
+            <button type="submit" class="btn-anadir">Crear cuenta</button>
+        </div>
+    </form>
+</div>

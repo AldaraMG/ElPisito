@@ -1,0 +1,40 @@
+<div class="contenedor">
+
+    <h1>Listado de usuarios</h1>
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+
+    <div *ngIf="cargaCompletada" >
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">ROL</th>
+                    <th class="activo" scope="col">ACTIVO</th>
+                    <th scope="col">EDITAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dato of aDatos">
+                    <th scope="row">{{dato.id}}</th>
+                    <td>{{dato.user}}</td>
+                    <td>{{dato.email}}</td>
+                    <td>{{dato.rol}}</td>
+                    <td [ngClass]="{
+                    'activo-rojo':dato.activo==0,
+                    'activo-verde':dato.activo==1
+                    }">●</td>
+                    <td>
+                        <button type="button" class="btn-editar" [routerLink]="['/edit-usuario', dato.id]">Editar</button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>

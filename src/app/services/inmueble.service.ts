@@ -40,9 +40,10 @@ export class InmuebleService {
 
 
   /*PARA LA VENTA DESDE EL BUSCADOR*/
-  getInmueblesFinder(tipo:number, poblacion:number, operacion:string):Observable<Inmueble[]>{
-
-    return this._http.get<Inmueble[]>(this.url + "inmuebles/" + tipo + "/" + poblacion + "/" + operacion);
+  getInmueblesFinder(tipo: number, poblacion: number, operacion: string): Observable<Inmueble[]> {
+    const apiUrl = `${this.url}inmuebles/${tipo}/${poblacion}/${operacion}`;
+    console.log('URL de la solicitud:', apiUrl);
+    return this._http.get<Inmueble[]>(apiUrl);
   }
 
 
@@ -64,4 +65,6 @@ export class InmuebleService {
 
     return this._http.put<Inmueble>(this.url + "inmueble",inmueble)
   }
+
+
 }

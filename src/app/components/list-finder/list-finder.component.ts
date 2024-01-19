@@ -11,30 +11,30 @@ import { TipoService } from '../../services/tipo.service';
   styleUrl: './list-finder.component.css'
 })
 export class ListFinderComponent implements OnInit {
-  poblacion: number;
-  tipo: number;
-  operacion: string;
+  poblacion:number;
+  tipo:number;
+  operacion:string;
   cartelNoInmuebles:boolean=false;
 
-  nombrePoblacion: string;
-  nombreTipo: string;
+  nombrePoblacion:string;
+  nombreTipo:string;
 
-  /////////////////////////////////////////////////
-  nFases: number = 3;
-  cargaCompletada: boolean = false;
-  fasesCargadas: number = 0;
-  /////////////////////////////////////////////////
+    /////////////////////////////////////////////////
+    nFases:number=2;
+    cargaCompletada:boolean=false;
+    fasesCargadas:number=0;
+    /////////////////////////////////////////////////
 
-  aDatos: any[] = [];
+    aDatos:any[]=[];
 
   constructor(
-    private _comunicationService: ComunicationService,
-    private _route: ActivatedRoute,
-    private _router: Router,
-    private _inmuebleService: InmuebleService,
-    private _poblacionService: PoblacionService,
-    private _tipoService: TipoService
-  ) { }
+    private _comunicationService:ComunicationService,
+    private _route:ActivatedRoute,
+    private _router:Router,
+    private _inmuebleService:InmuebleService,
+    private _poblacionService:PoblacionService,
+    private _tipoService:TipoService
+  ){}
 
 
   ngOnInit(): void {
@@ -44,78 +44,94 @@ export class ListFinderComponent implements OnInit {
   }
 
 
-  getDatos(): void {
-
-
+  getDatos():void{
+    
 
     //Necesito las tres variables de ruta po, ti, op
-    this._route.params.subscribe({
+  // Necesito las tres variables de ruta po, ti, op
+this._route.params.subscribe({
+  next: (params) => {
+    this.poblacion = params['ti'];  // Cambiado a 'ti'
+    this.tipo = params['po'];  // Cambiado a 'po'
+    this.operacion = params['op'];
+   
+  },
+  error: (error) => { this._router.navigate(["/error"]) }
+});
 
-      next: (params) => {
-        this.poblacion = params['po'];
-        this.tipo = params['ti'];
-        this.operacion = params['op'];
-
-      }
-      ,
-      error: (error) => { this._router.navigate(["/error"]) }
-
-    });//NO TIENE COMPLETE
-
-    //Hacemos esta llamada para conseguirel nombre de la población y del tipo elegida.
-
+    
+    //Hacemos esta llamada para conseguir el nombre de la población elegida
     this._poblacionService.getPoblacion(this.poblacion).subscribe({
 
-      next: (datos) => { this.nombrePoblacion = datos.nombre }
+      next: (datos)=>{
+        this.nombrePoblacion = datos.nombre;
+      }
       ,
-      error: (error) => { this._router.navigate(["/error"]) }
+      error: (error)=>{this._router.navigate(["/error"])}
       ,
-      complete: () => { this.faseCarga() }
-    })
-    
+      complete: ()=>{this.faseCarga()}
+
+
+    });
+
+    //Hacemos esta llamada para conseguir el nombre del tipo elegido
     this._tipoService.getTipo(this.tipo).subscribe({
 
-      next: (datos) => { this.nombreTipo = datos.nombre }
+      next: (datos)=>{
+
+        this.nombreTipo = datos.nombre;
+      }
       ,
-      error: (error) => { this._router.navigate(["/error"]) }
+      error: (error)=>{this._router.navigate(["/error"])}
       ,
-      complete: () => { this.faseCarga() }
-    })
+      complete: ()=>{this.faseCarga()}
+
+
+    });
+
 
 
     this._inmuebleService.getInmueblesFinder(this.tipo, this.poblacion, this.operacion).subscribe({
 
-      next: (datos) => {
-        this.aDatos = datos;
-        if(this.aDatos.length == 0){
-      this.cartelNoInmuebles=true;
-        }
+      next: (datos)=>{
 
+        this.aDatos = datos;  
+
+        if(this.aDatos.length == 0){
+
+          this.cartelNoInmuebles = true;
+
+        }
+  
+
+      
       }
       ,
-      error: (error) => { this._router.navigate(["/error"]) }
+      error: (error)=>{this._router.navigate(["/error"])}
       ,
-      complete: () => { this.faseCarga() }
+      complete: ()=>{this.faseCarga()}
     });
 
 
 
 
-  }
+  }//end getDatos
 
 
 
 
   ////////////////////////////////////////////////
-  faseCarga(): void {
+  faseCarga():void{
 
     this.fasesCargadas++;
-    if (this.fasesCargadas == this.nFases) {
+    if(this.fasesCargadas == this.nFases){
       this.cargaCompletada = true;
     }
-
+  
   }
   ////////////////////////////////////////////////
+  
+
 
 
 }

@@ -1,0 +1,34 @@
+<div class="contenedor">
+    <h1>EDITAR USUARIO</h1>
+
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="updateUsuario()">
+
+        <p class="id-tipo">ID: {{usuario.id}}</p>
+
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="activo" formControlName="elActivo">
+            <label class="form-check-label" for="activo">Activo</label>
+        </div>
+
+        <div class="mb-3">
+            <label for="usuario">USUARIX*</label>
+            <input type="text" class="form-control" id="user" name="user" autocomplete="off" required
+                [class.is-invalid]="registerForm.get('elUsuario')?.invalid && registerForm.get('elUsuario')?.touched"
+                formControlName="elUsuario">
+        </div>
+
+        <div class="mb-3">
+            <label for="email">EMAIL*</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="off" required
+                [class.is-invalid]="registerForm.get('elEmail')?.invalid && registerForm.get('elEmail')?.touched"
+                formControlName="elEmail">
+        </div>
+
+        <div class="contenedor-boton">
+            <button type="submit" class="btn-anadir" [disabled]="registerForm.invalid">Modificar</button>
+        </div>
+    </form>
+</div>
+

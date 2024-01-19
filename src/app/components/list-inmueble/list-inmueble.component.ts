@@ -42,7 +42,7 @@ export class ListInmuebleComponent implements OnInit {
         this.aDatos=datos; 
         
         for(let dato of this.aDatos){
-          dato.direccionCompleta = `${dato.via} ${dato.nombreVia} ${dato.numero} ${dato.planta}${dato.puerta}`;
+          dato.direccionCompleta = `${dato.via} ${dato.nombreVia} ${dato.numero} ${dato.planta} ${dato.puerta}`;
         }
         console.log(this.aDatos);
       }

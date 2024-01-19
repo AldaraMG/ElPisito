@@ -15,66 +15,85 @@ import { PoblacionService } from '../../services/poblacion.service';
 export class FinderComponent implements OnInit {
 
   aPoblaciones:Poblacion[];
-  aTipos:Tipo[];
-  aOperaciones:string[]=["Venta","Alquiler","Traspaso"];
+    aTipos:Tipo[];
+    aOperaciones:string[] = ["VENTA","ALQUILER","TRASPASO"];
 
-  poblacionElegida:Poblacion;
-  tipoElegido:Tipo;
-  operacionElegida:string;
-  
-  ////////////////////////////////////////////////
-  nFases:number=2;
-  cargaCompletada:boolean=false;
-  fasesCargadas:number=0;
-  /////////////////////////////////////////////////
+    poblacionElegida:Poblacion;
+    tipoElegido:Tipo;
+    operacionElegida:string;
 
 
-constructor(
-  private _comunicationService:ComunicationService,
-  private _router:Router,
-  private _poblacionService:PoblacionService,
-  private _tipoService:TipoService,
-  private _inmuebleService:InmuebleService,
-  
-){}
-  ngOnInit(): void {
-   this.getDatos();
-  }
-getDatos():void{
-  this._poblacionService.getPoblaciones().subscribe({
-
-    next: (datos)=>{this.aPoblaciones = datos;}
-    ,
-    error: (error)=>{this._router.navigate(['/error'])}
-    ,
-    complete: ()=>{this.faseCarga();}
-  })
-  this._tipoService.getTipos().subscribe({
-
-    next: (datos)=>{this.aTipos = datos;}
-    ,
-    error: (error)=>{this._router.navigate(['/error'])}
-    ,
-    complete: ()=>{this.faseCarga();}
-  })
-
-}//Vamos a traer los datos para rellenar los desplegables, los select de provincias y tipo.
-find():void{
-  //dejamos nombre dl tipo y nombre de la poblacion en Local Storage.
-  
-   this._router.navigate(['/list-finder',this.tipoElegido.id,this.poblacionElegida.id,this.operacionElegida,]);
-}
+    /////////////////////////////////////////////////
+    nFases:number=2;
+    cargaCompletada:boolean=false;
+    fasesCargadas:number=0;
+    /////////////////////////////////////////////////
 
 
-////////////////////////////////////////////////
- faseCarga():void{
+    constructor(
+      private _router:Router,
+      private _poblacionService:PoblacionService,
+      private _tipoService:TipoService,
+      private _inmuebleService:InmuebleService
+    ){}
 
-  this.fasesCargadas++;
-  if(this.fasesCargadas == this.nFases){
-    this.cargaCompletada = true;
-  }
 
-}
-////////////////////////////////////////////////
+
+    ngOnInit(): void {
+      this.getDatos();
+    }
+
+
+    getDatos():void{
+      //Vamos a traer los datos para rellenar los select de poblaciones y tipos
+      this._poblacionService.getPoblaciones().subscribe({
+
+        next: (datos)=>{this.aPoblaciones=datos;}
+        ,
+        error: (error)=>{this._router.navigate(["/error"])}
+        ,
+        complete: ()=>{this.faseCarga();}
+
+
+      });
+
+
+      this._tipoService.getTipos().subscribe({
+
+        next: (datos)=>{this.aTipos = datos;}
+        ,
+        error: (error)=>{this._router.navigate(["/error"])}
+        ,
+        complete: ()=>{this.faseCarga();}
+
+
+      });
+
+
+
+    }
+
+
+    find():void{
+ 
+
+      this._router.navigate(['/list-finder',this.tipoElegido.id,this.poblacionElegida.id,this.operacionElegida]);
+
+
+    }
+
+
+
+    ////////////////////////////////////////////////
+    faseCarga():void{
+
+      this.fasesCargadas++;
+      if(this.fasesCargadas == this.nFases){
+        this.cargaCompletada = true;
+      }
+    
+    }
+    ////////////////////////////////////////////////
+
 
 }

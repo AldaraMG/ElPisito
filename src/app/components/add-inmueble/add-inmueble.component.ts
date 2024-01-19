@@ -69,7 +69,9 @@ fasesCargadas:number=0;
     }
   
 
-  }
+  };
+
+
 
   constructor(
     private _poblacionService:PoblacionService,

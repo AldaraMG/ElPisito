@@ -12,7 +12,7 @@ import { ComunicationService } from '../../services/comunication.service';
 })
 export class LoginComponent {
 
-
+//Importa Reactiveformmodule.
 credenciales:Credentials={
 
    username:'',//en realidad es el email.

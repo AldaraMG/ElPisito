@@ -1,22 +1,30 @@
 <div class="contenedor">
-<h1>Login</h1>
+    <h1>Iniciar Sesión</h1>
+    <div class="registro mx-auto">
 
-<form class="mx-auto" #form="ngForm" (ngSubmit)="login()" [formGroup]="loginForm">
-<div class="mb-3">
-    <label for="email">EMAIL*</label>
-    <input type="email" class="form-control" id="email" name="email" autocomplete="off"  required [class.is-invalid]="loginForm.get('elEmail')?.invalid && loginForm.get('elEmail')?.touched" formControlName="elEmail">
+        <h6>¿No tienes una cuenta?.Regístrate</h6>
+        <img class="imagen-logo" src="assets/img/logo_transparent.png" alt="logo El Pisito">
+        <img class="imagen-logo2" src="assets/img/logo_transparent.png" alt="logo El Pisito">
+        <img class="imagen-logo3" src="assets/img/logo_transparent.png" alt="logo El Pisito">
+        <div class="contenedor-boton-registro"><button type="button" class="btn-anadir"routerLink="/sign-up">Crear cuenta</button></div>
 
-</div>
-<div class="mb-3">
-    <label for="password">PASSWORD*</label>
-    <input type="password" class="form-control" id="password" name="password" autocomplete="off"  required [class.is-invalid]="loginForm.get('elPassword')?.invalid && loginForm.get('elPassword')?.touched" formControlName="elPassword">
-</div>
-<div class="contenedor-boton">
-    <button type="submit" class="btn-anadir" [disabled]="form.invalid">Iniciar Sesion</button>
+    </div>
+    <form class="mx-auto" #form="ngForm" (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="mb-3">
+            <label for="email">EMAIL*</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="off" required
+                [class.is-invalid]="loginForm.get('elEmail')?.invalid && loginForm.get('elEmail')?.touched"
+                formControlName="elEmail">
+
+        </div>
+        <div class="mb-3">
+            <label for="password">PASSWORD*</label>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="off" required
+                [class.is-invalid]="loginForm.get('elPassword')?.invalid && loginForm.get('elPassword')?.touched"
+                formControlName="elPassword">
+        </div>
+        <div class="contenedor-boton">
+            <button type="submit" class="btn-anadir" [disabled]="form.invalid">Iniciar Sesion</button>
 
 
-
-
-
-
-</div>
+        </div>

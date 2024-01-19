@@ -1,37 +1,45 @@
 <div class="contenedor">
 
+    <app-preloader *ngIf="!cargaCompletada"></app-preloader>
 
+    
     <form *ngIf="cargaCompletada" class="mx-auto" #form="ngForm" (ngSubmit)="find()">
 
-        <h5 class="titulo-busqueda">BUSCADOR DE INMUEBLES</h5>
+        <h6 class="titulo-busqueda">BUSCA TU INMUEBLE!!!</h6>
 
         <div class="mb-3">
+
             <label for="poblacion">POBLACIÓN*:</label>
             <select name="poblacion" id="poblacion" class="form-select" required [(ngModel)]="poblacionElegida">
-                <option [ngClass]="{'select-inactivo': poblacion.activo==0}" *ngFor="let poblacion of aPoblaciones"
-                    [ngValue]="poblacion">{{poblacion.nombre}} ({{poblacion.provincia.nombre}})</option>
+                <option [ngClass]="{'select-inactivo': poblacion.activo==0}" *ngFor="let poblacion of aPoblaciones"  [ngValue]="poblacion">{{poblacion.nombre}} ({{poblacion.provincia.nombre}})</option>
             </select>
+
         </div>
 
+
         <div class="mb-3">
+
             <label for="tipo">TIPO*:</label>
             <select name="tipo" id="tipo" class="form-select" required [(ngModel)]="tipoElegido">
-                <option *ngFor="let tipo of aTipos" [ngValue]="tipo">{{tipo.nombre}} </option>
+                <option *ngFor="let tipo of aTipos" [ngValue]="tipo">{{tipo.nombre}}</option>
             </select>
+
         </div>
-
-
 
         <div class="mb-3">
-            <label for="operacion">OPERACIÓN*:</label>
+
+            <label for="operacion">OPERACION*:</label>
             <select name="operacion" id="operacion" class="form-select" required [(ngModel)]="operacionElegida">
-                <option *ngFor="let operacion of aOperaciones" value="{{operacion}}">{{operacion}} </option>
+                <option *ngFor="let operacion of aOperaciones" value="{{operacion}}">{{operacion}}</option>
             </select>
+
         </div>
 
+
         <div class="contenedor-boton">
-            <button type="submit" class="btn-editar" [disabled]="form.invalid">Buscar</button>
+            <button type="submit" class="btn btn-md btn-primary" [disabled]="form.invalid">Buscar Inmuebles</button>
         </div>
 
     </form>
+   
 </div>
